@@ -1026,26 +1026,26 @@ def load_state_from_disk():
         try:
             with open(STORE_PATH, "r", encoding="utf-8") as f:
                 data = json.load(f)
-                if "orders" in data:
-                    ORDERS_DATABASE = data.get("orders", [])
-                if "upcoming" in data:
-                    UPCOMING_ORDERS = data.get("upcoming", [])
-                if "trucks" in data:
-                    TRUCK_TYPES_CATALOG = data.get("trucks", [])
-                if "containers" in data:
-                    CONTAINER_TYPES_CATALOG = data.get("containers", [])
-                if "cargo" in data:
-                    CARGO_INDUSTRIES_CATALOG = data.get("cargo", [])
-                if "employees" in data:
-                    EMPLOYEES_ROSTER = data.get("employees", [])
-                if "plantguard" in data:
-                    PLANTGUARD_RULES = data.get("plantguard", [])
-                if "capitallock" in data:
-                    CAPITALLOCK_ESCROWS = data.get("capitallock", [])
-                if "shieldgate" in data:
-                    SHIELDGATE_POLICIES = data.get("shieldgate", [])
-                if "ecoyield" in data:
-                    ECOYIELD_BENCHMARKS = data.get("ecoyield", [])
+                if data.get("orders"):
+                    ORDERS_DATABASE = data.get("orders")
+                if data.get("upcoming"):
+                    UPCOMING_ORDERS = data.get("upcoming")
+                if data.get("trucks"):
+                    TRUCK_TYPES_CATALOG = data.get("trucks")
+                if data.get("containers"):
+                    CONTAINER_TYPES_CATALOG = data.get("containers")
+                if data.get("cargo"):
+                    CARGO_INDUSTRIES_CATALOG = data.get("cargo")
+                if data.get("employees"):
+                    EMPLOYEES_ROSTER = data.get("employees")
+                if data.get("plantguard"):
+                    PLANTGUARD_RULES = data.get("plantguard")
+                if data.get("capitallock"):
+                    CAPITALLOCK_ESCROWS = data.get("capitallock")
+                if data.get("shieldgate"):
+                    SHIELDGATE_POLICIES = data.get("shieldgate")
+                if data.get("ecoyield"):
+                    ECOYIELD_BENCHMARKS = data.get("ecoyield")
         except Exception as e:
             print(f"Error loading enterprise state: {e}")
 

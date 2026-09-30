@@ -5,3 +5,4 @@ networkx
 requests
 orjson
 websockets
+httpx

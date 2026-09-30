@@ -11,6 +11,6 @@
   ],
   "bias": "none",
   "training_loss": 0.382,
-  "trained_samples": 99,
+  "trained_samples": 103,
   "framework": "PyTorch / PEFT / SABRE Sovereign Kernel"
 }

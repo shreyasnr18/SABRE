@@ -24,19 +24,19 @@
       "current_stage": 6,
       "ulip_compliance": {
         "vahan_verified": true,
-        "vahan_check_timestamp": "2026-09-29 23:03:12",
+        "vahan_check_timestamp": "2026-09-21 09:15:32",
         "rc_status": "ACTIVE",
-        "fitness_valid_upto": "2027-08-15",
-        "national_permit_no": "NP/KA/2025/7BB64",
-        "national_permit_valid_upto": "2027-03-28",
+        "fitness_valid_upto": "2027-08-14",
+        "national_permit_no": "NP/KA/2025/88192",
+        "national_permit_valid_upto": "2027-03-31",
         "state_road_tax_status": "PAID_UP_TO_DATE",
-        "puc_certificate_valid_upto": "2026-12-28",
+        "puc_certificate_valid_upto": "2026-12-15",
         "sarathi_verified": true,
-        "sarathi_check_timestamp": "2026-09-29 23:03:12",
+        "sarathi_check_timestamp": "2026-09-21 09:16:04",
         "dl_status": "VALID_COMMERCIAL",
         "dl_class": "TRANS / HGMV",
         "hazardous_endorsement": false,
-        "driver_badge_no": "BDG-KA-9941",
+        "driver_badge_no": "BDG-KA-44109",
         "overall_compliance_verdict": "CLEARED_FOR_DISPATCH"
       },
       "bilty": {
@@ -83,7 +83,7 @@
         "advance_split": {
           "cash_daily_bata_inr": 45000.0,
           "fuel_card_inr": 485000.0,
-          "fuel_card_provider": "IndianOil XTRAPOWER",
+          "fuel_card_provider": "IndianOil XTRAPOWER RFID Card #8841-209",
           "fastag_wallet_recharge_inr": 61500.0,
           "fastag_tag_id": "34161FA82032890"
         },
@@ -548,8 +548,8 @@
       "net_payable_salary": 30400.0,
       "khata_status": "SETTLED_DISBURSED",
       "payment_mode": "IMPS Immediate Bank Settlement",
-      "utr_ref": "IMPS/255C65F4-C",
-      "disbursed_on": "2026-09-29",
+      "utr_ref": "IMPS/D898E1CD-5",
+      "disbursed_on": "2026-09-30",
       "delay_days": 0,
       "remarks": "Audited & disbursed in full."
     },
@@ -651,5 +651,5 @@
       "asset_health": "MODERATE_MARGIN"
     }
   ],
-  "last_updated": "2026-09-29T23:03:12.430185"
+  "last_updated": "2026-09-30T10:09:42.793512"
 }

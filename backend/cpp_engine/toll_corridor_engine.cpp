@@ -304,27 +304,42 @@ int main(int argc, char* argv[]) {
     TollCorridorEngine engine;
 
     if (argc < 2) {
-        std::cout << "{\"error\": \"Usage: ./toll_engine <command> [args...]\"}\n";
-        return 1;
+        // Default execution with standard corridor and MAV class
+        std::cout << engine.calculate_route_toll("CORR-NH48-DEL-MUM", "mav_4to6axle", false, 0.0) << std::endl;
+        return 0;
     }
 
-    std::string cmd = argv[1];
+    std::string corridor = "CORR-NH48-DEL-MUM";
+    std::string vclass = "mav_4to6axle";
+    bool round_trip = false;
+    double overload = 0.0;
+    bool is_list = false;
 
-    if (cmd == "list-corridors") {
+    for (int i = 1; i < argc; ++i) {
+        std::string arg = argv[i];
+        if (arg == "list-corridors" || arg == "--list" || arg == "--list-corridors") {
+            is_list = true;
+        } else if (arg == "--corridor" && i + 1 < argc) {
+            corridor = argv[++i];
+        } else if ((arg == "--class" || arg == "--vclass") && i + 1 < argc) {
+            vclass = argv[++i];
+        } else if (arg == "--round-trip") {
+            round_trip = true;
+        } else if (arg == "--overload" && i + 1 < argc) {
+            overload = std::stod(argv[++i]);
+        } else if (arg == "calculate") {
+            if (i + 1 < argc && argv[i + 1][0] != '-') corridor = argv[++i];
+            if (i + 1 < argc && argv[i + 1][0] != '-') vclass = argv[++i];
+            if (i + 1 < argc && argv[i + 1][0] != '-') round_trip = (std::string(argv[++i]) == "1");
+            if (i + 1 < argc && argv[i + 1][0] != '-') overload = std::stod(argv[++i]);
+        }
+    }
+
+    if (is_list) {
         std::cout << engine.get_corridors_json() << std::endl;
         return 0;
     }
 
-    if (cmd == "calculate") {
-        std::string corridor = (argc > 2) ? argv[2] : "CORR-NH48-DEL-MUM";
-        std::string vclass = (argc > 3) ? argv[3] : "mav_4to6axle";
-        bool round_trip = (argc > 4 && std::string(argv[4]) == "1");
-        double overload = (argc > 5) ? std::stod(argv[5]) : 0.0;
-
-        std::cout << engine.calculate_route_toll(corridor, vclass, round_trip, overload) << std::endl;
-        return 0;
-    }
-
-    std::cout << "{\"error\": \"Unknown command: " << cmd << "\"}\n";
-    return 1;
+    std::cout << engine.calculate_route_toll(corridor, vclass, round_trip, overload) << std::endl;
+    return 0;
 }
