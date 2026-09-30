@@ -1,0 +1,16 @@
+{
+  "base_model_name_or_path": "Llama-3.3-70B-Instruct",
+  "peft_type": "LORA",
+  "r": 32,
+  "lora_alpha": 64,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "bias": "none",
+  "training_loss": 0.382,
+  "trained_samples": 27,
+  "framework": "PyTorch / PEFT / SABRE Sovereign Kernel"
+}

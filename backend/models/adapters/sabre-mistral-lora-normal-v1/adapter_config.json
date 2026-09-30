@@ -1,0 +1,16 @@
+{
+  "base_model_name_or_path": "Mistral-7B-Instruct-v0.3",
+  "peft_type": "LORA",
+  "r": 16,
+  "lora_alpha": 32,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "bias": "none",
+  "training_loss": 0.382,
+  "trained_samples": 99,
+  "framework": "PyTorch / PEFT / SABRE Sovereign Kernel"
+}

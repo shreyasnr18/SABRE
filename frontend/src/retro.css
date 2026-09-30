@@ -1,0 +1,124 @@
+/* RETRO OS UI KIT (Windows 95/3.1 Style) */
+
+:root {
+  --retro-bg: #c0c0c0;
+  --retro-text: #000000;
+  --retro-highlight: #ffffff;
+  --retro-shadow: #808080;
+  --retro-dark-shadow: #000000;
+  --retro-title-bg: #000080;
+  --retro-title-text: #ffffff;
+  --retro-win-bg: #008080; /* Teal desktop */
+}
+
+.retro-desktop {
+  background-color: var(--retro-win-bg);
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+  color: var(--retro-text);
+  padding: 16px;
+  overflow: auto;
+}
+
+/* Classic Beveled Window */
+.retro-window {
+  background-color: var(--retro-bg);
+  border-top: 2px solid var(--retro-highlight);
+  border-left: 2px solid var(--retro-highlight);
+  border-right: 2px solid var(--retro-dark-shadow);
+  border-bottom: 2px solid var(--retro-dark-shadow);
+  box-shadow: inset -1px -1px 0px 0px var(--retro-shadow), inset 1px 1px 0px 0px var(--retro-bg);
+  padding: 2px;
+  margin-bottom: 16px;
+}
+
+/* Window Title Bar */
+.retro-title-bar {
+  background-color: var(--retro-title-bg);
+  color: var(--retro-title-text);
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Inner sunken panel (for content/lists) */
+.retro-panel-sunken {
+  background-color: #ffffff;
+  border-top: 2px solid var(--retro-shadow);
+  border-left: 2px solid var(--retro-shadow);
+  border-right: 2px solid var(--retro-highlight);
+  border-bottom: 2px solid var(--retro-highlight);
+  padding: 8px;
+}
+
+/* Classic Button */
+.retro-button {
+  background-color: var(--retro-bg);
+  color: var(--retro-text);
+  border-top: 2px solid var(--retro-highlight);
+  border-left: 2px solid var(--retro-highlight);
+  border-right: 2px solid var(--retro-dark-shadow);
+  border-bottom: 2px solid var(--retro-dark-shadow);
+  box-shadow: inset -1px -1px 0px 0px var(--retro-shadow);
+  padding: 4px 12px;
+  font-family: 'MS Sans Serif', Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.retro-button:active {
+  border-top: 2px solid var(--retro-dark-shadow);
+  border-left: 2px solid var(--retro-dark-shadow);
+  border-right: 2px solid var(--retro-highlight);
+  border-bottom: 2px solid var(--retro-highlight);
+  box-shadow: inset 1px 1px 0px 0px var(--retro-shadow);
+  padding: 5px 11px 3px 13px; /* shift text down */
+}
+
+/* Tables */
+.retro-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+.retro-table th, .retro-table td {
+  border: 1px solid var(--retro-shadow);
+  padding: 4px 8px;
+  text-align: left;
+  font-size: 12px;
+}
+.retro-table th {
+  background-color: var(--retro-bg);
+  border-top: 1px solid var(--retro-highlight);
+  border-left: 1px solid var(--retro-highlight);
+  border-right: 1px solid var(--retro-dark-shadow);
+  border-bottom: 1px solid var(--retro-dark-shadow);
+  font-weight: normal;
+}
+.retro-table tr:hover {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+/* Retro Input */
+.retro-input {
+  background-color: #ffffff;
+  border-top: 2px solid var(--retro-shadow);
+  border-left: 2px solid var(--retro-shadow);
+  border-right: 2px solid var(--retro-highlight);
+  border-bottom: 2px solid var(--retro-highlight);
+  padding: 4px 6px;
+  font-family: 'MS Sans Serif', Tahoma, sans-serif;
+  font-size: 13px;
+  width: 100%;
+}

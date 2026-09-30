@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sabre-kafka
+  namespace: sabre-paas
+spec:
+  serviceName: sabre-kafka
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sabre-kafka
+  template:
+    metadata:
+      labels:
+        app: sabre-kafka
+    spec:
+      containers:
+      - name: kafka
+        image: confluentinc/cp-kafka:7.5.0
+        ports:
+        - containerPort: 9092
+        env:
+        - name: KAFKA_NODE_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: KAFKA_PROCESS_ROLES
+          value: "broker,controller"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sabre-kafka
+  namespace: sabre-paas
+spec:
+  selector:
+    app: sabre-kafka
+  ports:
+  - port: 9092
+    targetPort: 9092

@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  # 1. Java 17 Zero-Trust Security Gateway
+  sabre-security-gateway:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.java
+    container_name: sabre-security-gateway
+    ports:
+      - "8090:8090"
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx512m
+      - SABRE_MASTER_SECRET=SABRE-DEFENSE-GRADE-ENTERPRISE-KEY-9941-SEC-2026-X
+    restart: always
+
+  # 2. C++ High-Speed Math & Toll Optimization Core
+  sabre-cpp-math-core:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.cpp
+    container_name: sabre-cpp-math-core
+    restart: always
+
+  # 3. Apache Kafka Event Streaming Bus (KRaft Mode - No Zookeeper needed)
+  sabre-kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: sabre-kafka
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://sabre-kafka:29092,PLAINTEXT_HOST://localhost:9092'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_CONTROLLER_QUORUM_VOTERS: '1@sabre-kafka:29093'
+      KAFKA_LISTENERS: 'PLAINTEXT://0.0.0.0:29092,CONTROLLER://0.0.0.0:29093,PLAINTEXT_HOST://0.0.0.0:9092'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
+      KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+      KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+
+  # 4. n8n Visual Automation Workflow Engine
+  sabre-n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: sabre-n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=sabre_admin
+      - N8N_BASIC_AUTH_PASSWORD=sabre_logistics_enterprise_2026
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: always
+
+  # 5. SABRE Python AI & Telemetry API Server
+  sabre-backend-api:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.python
+    container_name: sabre-backend-api
+    ports:
+      - "8000:8000"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=sabre-kafka:29092
+      - JAVA_SECURITY_ENDPOINT=http://sabre-security-gateway:8090
+    depends_on:
+      - sabre-security-gateway
+      - sabre-kafka
+    restart: always
+
+  # 6. Vite React Enterprise Frontend
+  sabre-frontend:
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile.frontend
+    container_name: sabre-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - sabre-backend-api
+    restart: always
+
+volumes:
+  kafka_data:
+  n8n_data:

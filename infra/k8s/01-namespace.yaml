@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sabre-paas
+  labels:
+    name: sabre-paas
+    tier: enterprise-freight

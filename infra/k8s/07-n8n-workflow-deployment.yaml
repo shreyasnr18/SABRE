@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sabre-n8n
+  namespace: sabre-paas
+  labels:
+    app: sabre-n8n
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sabre-n8n
+  template:
+    metadata:
+      labels:
+        app: sabre-n8n
+    spec:
+      containers:
+      - name: n8n-automation
+        image: docker.n8n.io/n8nio/n8n:latest
+        ports:
+        - containerPort: 5678
+        env:
+        - name: N8N_BASIC_AUTH_ACTIVE
+          value: "true"
+        - name: N8N_BASIC_AUTH_USER
+          value: "sabre_admin"
+        envFrom:
+        - secretRef:
+            name: sabre-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sabre-n8n
+  namespace: sabre-paas
+spec:
+  selector:
+    app: sabre-n8n
+  ports:
+  - port: 5678
+    targetPort: 5678

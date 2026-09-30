@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sabre-java-security
+  namespace: sabre-paas
+  labels:
+    app: sabre-java-security
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sabre-java-security
+  template:
+    metadata:
+      labels:
+        app: sabre-java-security
+    spec:
+      containers:
+      - name: java-security-shield
+        image: sabre-registry/java-security-shield:2.5.0
+        ports:
+        - containerPort: 8090
+        envFrom:
+        - configMapRef:
+            name: sabre-config
+        - secretRef:
+            name: sabre-secrets
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sabre-java-security
+  namespace: sabre-paas
+spec:
+  selector:
+    app: sabre-java-security
+  ports:
+  - port: 8090
+    targetPort: 8090

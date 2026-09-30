@@ -1,0 +1,100 @@
+{
+  "name": "S.A.B.R.E. Thermal Brake Alert Automation Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sabre-thermal-alert",
+        "options": {}
+      },
+      "id": "node-webhook-trigger",
+      "name": "Webhook - High Brake Thermal Alert",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.body.brake_temp_celsius }}",
+              "operation": "greaterThan",
+              "value2": 420
+            }
+          ]
+        }
+      },
+      "id": "node-filter-critical",
+      "name": "Filter Critical Temperature (>420°C)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [320, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://sabre-python-paas:8000/api/v1/telematics/dispatch-emergency-warning",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"vehicle_id\": \"{{ $json.body.vehicle_id }}\",\n  \"temperature_celsius\": {{ $json.body.brake_temp_celsius }},\n  \"location\": \"{{ $json.body.location }}\",\n  \"action\": \"DISPATCH_RETARDER_AND_ESCAPE_RAMP_GUIDANCE\"\n}",
+        "options": {}
+      },
+      "id": "node-call-emergency-dispatch",
+      "name": "HTTP Request - Emergency Dispatch API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [560, 200]
+    },
+    {
+      "parameters": {
+        "url": "http://sabre-java-security:8090/security/audit",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"event_type\": \"THERMAL_BRAKE_OVERHEAT\",\n  \"source\": \"N8N_AUTOMATION_ENGINE\",\n  \"severity\": \"CRITICAL\",\n  \"details\": \"Vehicle {{ $json.body.vehicle_id }} brake temp reached {{ $json.body.brake_temp_celsius }}°C\"\n}",
+        "options": {}
+      },
+      "id": "node-audit-log",
+      "name": "HTTP Request - Java Security Shield Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [800, 200]
+    }
+  ],
+  "connections": {
+    "Webhook - High Brake Thermal Alert": {
+      "main": [
+        [
+          {
+            "node": "Filter Critical Temperature (>420°C)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Critical Temperature (>420°C)": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Emergency Dispatch API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request - Emergency Dispatch API": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Java Security Shield Audit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {}
+}

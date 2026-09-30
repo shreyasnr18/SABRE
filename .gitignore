@@ -1,0 +1,85 @@
+# Environment & Secrets (Strictly Excluded)
+.env
+*.env
+.env.*
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+*.pem
+*.key
+*.cert
+*.pfx
+secrets/
+credentials/
+auth_tokens.json
+
+# Dependencies
+node_modules/
+**/node_modules/
+package-lock.json.bak
+
+# Production Builds
+dist/
+**/dist/
+build/
+**/build/
+.next/
+out/
+
+# Python Cache & Virtual Environments
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+**/.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# Logs & Databases
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+
+# Scratch & Temporary Build Artifacts
+scratch/
+temp_sabre_raw.mp4

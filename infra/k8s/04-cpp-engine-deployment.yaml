@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sabre-cpp-engine
+  namespace: sabre-paas
+  labels:
+    app: sabre-cpp-engine
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sabre-cpp-engine
+  template:
+    metadata:
+      labels:
+        app: sabre-cpp-engine
+    spec:
+      containers:
+      - name: cpp-math-core
+        image: sabre-registry/cpp-math-core:2.5.0
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: "256Mi"
+          requests:
+            cpu: "500m"
+            memory: "128Mi"

@@ -1,0 +1,75 @@
+{
+  "name": "S.A.B.R.E. Zero-Trust Security Threat Triage Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sabre-security-triage",
+        "options": {}
+      },
+      "id": "node-sec-webhook",
+      "name": "Webhook - Security Shield Event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.threat_level }}",
+              "operation": "equal",
+              "value2": "HIGH"
+            }
+          ]
+        }
+      },
+      "id": "node-sec-filter",
+      "name": "Check Threat Severity (HIGH)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [320, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://sabre-java-security:8090/security/verify",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"token\": \"{{ $json.body.token }}\",\n  \"required_scope\": \"ADMIN_REVOKE\"\n}",
+        "options": {}
+      },
+      "id": "node-verify-token",
+      "name": "Verify Token via Java Security Shield",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [560, 200]
+    }
+  ],
+  "connections": {
+    "Webhook - Security Shield Event": {
+      "main": [
+        [
+          {
+            "node": "Check Threat Severity (HIGH)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Threat Severity (HIGH)": {
+      "main": [
+        [
+          {
+            "node": "Verify Token via Java Security Shield",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {}
+}

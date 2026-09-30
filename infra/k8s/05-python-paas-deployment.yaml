@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sabre-python-paas
+  namespace: sabre-paas
+  labels:
+    app: sabre-python-paas
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: sabre-python-paas
+  template:
+    metadata:
+      labels:
+        app: sabre-python-paas
+    spec:
+      containers:
+      - name: python-paas-backend
+        image: sabre-registry/python-paas-backend:2.5.0
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: sabre-config
+        - secretRef:
+            name: sabre-secrets
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: "1024Mi"
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sabre-python-paas
+  namespace: sabre-paas
+spec:
+  selector:
+    app: sabre-python-paas
+  ports:
+  - port: 8000
+    targetPort: 8000

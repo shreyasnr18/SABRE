@@ -1,0 +1,655 @@
+{
+  "shipments": [
+    {
+      "trip_id": "TRIP-IN-2026-081",
+      "order_ref": "ORD-TAT-9941",
+      "client_name": "Tata Steel Limited",
+      "client_gstin": "20AAACT2727Q1ZW",
+      "origin_hub": "Jamshedpur Works, Jharkhand",
+      "destination_hub": "Peenya Industrial Area, Bengaluru, Karnataka",
+      "corridor": "Eastern-Southern Artery (NH-16 / NH-44)",
+      "distance_km": 1840,
+      "cargo_description": "Cold-Rolled Automotive High-Tensile Steel Coils",
+      "gross_weight_mt": 24.8,
+      "tare_weight_mt": 14.2,
+      "net_weight_mt": 24.8,
+      "vehicle_no": "KA-01-AB-1234",
+      "vehicle_type": "Tata Prima 5530.S (16-Wheeler Multi-Axle Trailer)",
+      "ownership_type": "Fleet Owned",
+      "driver_name": "Suresh Patil",
+      "driver_phone": "+91 98450 12891",
+      "driver_dl_no": "KA0120150049210",
+      "is_hazardous": false,
+      "gta_sac_code": "996511",
+      "current_stage": 6,
+      "ulip_compliance": {
+        "vahan_verified": true,
+        "vahan_check_timestamp": "2026-09-29 23:03:12",
+        "rc_status": "ACTIVE",
+        "fitness_valid_upto": "2027-08-15",
+        "national_permit_no": "NP/KA/2025/7BB64",
+        "national_permit_valid_upto": "2027-03-28",
+        "state_road_tax_status": "PAID_UP_TO_DATE",
+        "puc_certificate_valid_upto": "2026-12-28",
+        "sarathi_verified": true,
+        "sarathi_check_timestamp": "2026-09-29 23:03:12",
+        "dl_status": "VALID_COMMERCIAL",
+        "dl_class": "TRANS / HGMV",
+        "hazardous_endorsement": false,
+        "driver_badge_no": "BDG-KA-9941",
+        "overall_compliance_verdict": "CLEARED_FOR_DISPATCH"
+      },
+      "bilty": {
+        "bilty_no": "LR-2026-9901",
+        "bilty_date": "2026-09-21",
+        "e_way_bill_no": "241892049182",
+        "e_way_bill_valid_upto": "2026-09-30 23:59:00",
+        "consignor_name": "Tata Steel Works (Flat Products Division)",
+        "consignor_address": "Gate 4, Bistupur Industrial Area, Jamshedpur - 831001",
+        "consignee_name": "Bharat Forge / BFW Precision Machining Hub",
+        "consignee_address": "Plot 18/B, 2nd Phase Peenya Industrial Area, Bengaluru - 560058",
+        "declared_cargo_value_inr": 4850000.0,
+        "packages_count": "6 Steel Coils (Sealed Straps)",
+        "loading_challan_no": "LC-JSR-4921",
+        "copies": {
+          "consignor_copy": {
+            "issued": true,
+            "issued_to": "Shipper Gate Security",
+            "badge_color": "#ec4899"
+          },
+          "consignee_copy": {
+            "issued": true,
+            "issued_to": "Buyer Delivery Reception",
+            "badge_color": "#3b82f6"
+          },
+          "driver_copy": {
+            "issued": true,
+            "issued_to": "In-Cabin Highway RTO Copy",
+            "badge_color": "#10b981"
+          },
+          "billing_copy": {
+            "issued": true,
+            "issued_to": "Transporter Accounts Desk",
+            "badge_color": "#f59e0b"
+          }
+        }
+      },
+      "trip_sheet": {
+        "trip_card_no": "TC-2026-081",
+        "issue_date": "2026-09-21",
+        "agreed_gross_freight_inr": 845000.0,
+        "advance_percentage": 70.0,
+        "total_advance_payable_inr": 591500.0,
+        "advance_split": {
+          "cash_daily_bata_inr": 45000.0,
+          "fuel_card_inr": 485000.0,
+          "fuel_card_provider": "IndianOil XTRAPOWER",
+          "fastag_wallet_recharge_inr": 61500.0,
+          "fastag_tag_id": "34161FA82032890"
+        },
+        "balance_pending_30pct_inr": 253500.0,
+        "market_broker_details": null,
+        "form_15g_15h_applicable": false
+      },
+      "in_transit_telemetry": {
+        "current_location": "Tumakuru Highway Toll Approach, Karnataka",
+        "fastag_deductions_total_inr": 18450.0,
+        "fastag_toll_events": [
+          {
+            "plaza_name": "Kharagpur NH-16 Toll Plaza",
+            "amount_inr": 840.0,
+            "time": "2026-09-22 04:12:00"
+          },
+          {
+            "plaza_name": "Bhubaneswar South Tollway",
+            "amount_inr": 920.0,
+            "time": "2026-09-22 18:40:00"
+          },
+          {
+            "plaza_name": "Visakhapatnam Bypass Toll",
+            "amount_inr": 1150.0,
+            "time": "2026-09-23 11:22:00"
+          },
+          {
+            "plaza_name": "Vijayawada Outer Ring Expressway",
+            "amount_inr": 1420.0,
+            "time": "2026-09-24 02:15:00"
+          },
+          {
+            "plaza_name": "Tirupati-Chittoor Tollway",
+            "amount_inr": 1180.0,
+            "time": "2026-09-24 20:30:00"
+          },
+          {
+            "plaza_name": "Hosakote-Bengaluru Peripheral",
+            "amount_inr": 890.0,
+            "time": "2026-09-25 09:10:00"
+          }
+        ],
+        "e_way_bill_expiry_countdown_hours": 38.5,
+        "e_way_bill_status": "ACTIVE_WITHIN_DEADLINE",
+        "distance_remaining_km": 42,
+        "section_129_gst_penalty_risk": "ZERO_COMPLIANT"
+      },
+      "unloading_pod": {
+        "unloaded_timestamp": "2026-09-25 14:30:00",
+        "destination_weighbridge_slip_no": "WB-BFW-8841",
+        "gross_weight_unloaded_mt": 24.8,
+        "shortage_weight_kg": 0.0,
+        "pod_condition": "CLEAN_SOUND",
+        "pod_stamp_remark": "Received in Sound Condition with all 6 security seals intact. Zero surface moisture.",
+        "receiver_supervisor_signature": "Venkatesh Rao, Store Incharge (BFW)",
+        "weighbridge_slip_verified": true,
+        "shortage_damage_debit_assessed_inr": 0.0
+      },
+      "bill_submission": {
+        "paper_stage": "PHYSICALLY_SUBMITTED_TO_CLIENT",
+        "driver_handover_to_branch_date": "2026-09-25",
+        "branch_handover_courier_ref": "DTDC-BLR-99210",
+        "client_desk_submission_date": "2026-09-26",
+        "client_acknowledgment_ref": "BFW/WH/IN/4991",
+        "client_receiving_clerk": "Kavitha M., Accounts Dept",
+        "credit_terms_days": 30,
+        "credit_clock_days_elapsed": 4,
+        "credit_clock_days_remaining": 26,
+        "payment_due_date": "2026-10-26"
+      },
+      "final_settlement": {
+        "gross_freight_inr": 845000.0,
+        "tds_rate_pct": 2.0,
+        "tds_deducted_inr": 16900.0,
+        "shortage_damage_debit_inr": 0.0,
+        "late_unloading_penalty_inr": 0.0,
+        "advance_already_paid_inr": 591500.0,
+        "net_balance_due_inr": 236600.0,
+        "treds_eligible": true,
+        "treds_platform": "RXIL (Receivables Exchange of India)",
+        "treds_status": "APPROVED_FOR_AUCTION",
+        "treds_advance_rate_pct": 88.0,
+        "treds_instant_cash_inr": 208208.0,
+        "treds_bank_bidder": "State Bank of India (MSME Corridor Discounting @ 7.8% p.a.)",
+        "settlement_verdict": "Awaiting Client RTGS Cycle or Instant TReDS 24hr Liquidity"
+      }
+    },
+    {
+      "trip_id": "TRIP-IN-2026-082",
+      "order_ref": "ORD-LNT-4822",
+      "client_name": "Larsen & Toubro Heavy Engineering",
+      "client_gstin": "24AAACL0114L1Z2",
+      "origin_hub": "Hazira Heavy Complex, Surat, Gujarat",
+      "destination_hub": "Suzlon Energy Wind Park, Mundra Port, Kutch",
+      "corridor": "Western Coastal Industrial Artery (NH-48 / NH-8A)",
+      "distance_km": 540,
+      "cargo_description": "Wind Turbine Nacelle Heavy Castings (ODC Project Cargo)",
+      "gross_weight_mt": 18.5,
+      "tare_weight_mt": 12.0,
+      "net_weight_mt": 18.5,
+      "vehicle_no": "MH-12-RN-9921",
+      "vehicle_type": "BharatBenz 4028T (Hydraulic Puller ODC)",
+      "ownership_type": "Market / Attached Broker",
+      "driver_name": "Balwinder Singh",
+      "driver_phone": "+91 97110 33819",
+      "driver_dl_no": "MH1220120019448",
+      "is_hazardous": false,
+      "gta_sac_code": "996512",
+      "current_stage": 5,
+      "ulip_compliance": {
+        "vahan_verified": true,
+        "vahan_check_timestamp": "2026-09-22 08:30:11",
+        "rc_status": "ACTIVE",
+        "fitness_valid_upto": "2027-04-10",
+        "national_permit_no": "NP/MH/2024/99120",
+        "national_permit_valid_upto": "2027-02-28",
+        "state_road_tax_status": "PAID_UP_TO_DATE",
+        "puc_certificate_valid_upto": "2026-11-20",
+        "sarathi_verified": true,
+        "sarathi_check_timestamp": "2026-09-22 08:31:00",
+        "dl_status": "VALID_COMMERCIAL",
+        "dl_class": "TRANS / HAZMAT_ELIGIBLE",
+        "hazardous_endorsement": false,
+        "driver_badge_no": "BDG-MH-19201",
+        "overall_compliance_verdict": "CLEARED_FOR_DISPATCH"
+      },
+      "bilty": {
+        "bilty_no": "LR-2026-9902",
+        "bilty_date": "2026-09-22",
+        "e_way_bill_no": "291881920144",
+        "e_way_bill_valid_upto": "2026-10-02 23:59:00",
+        "consignor_name": "L&T Heavy Engineering Hazira Works",
+        "consignor_address": "Surat-Hazira Road, Surat, Gujarat - 394510",
+        "consignee_name": "Suzlon Energy Wind Park Infrastructure Ltd",
+        "consignee_address": "Site Gate 3, Special Economic Zone, Mundra, Kutch, Gujarat - 370421",
+        "declared_cargo_value_inr": 12500000.0,
+        "packages_count": "1 ODC Nacelle Unit",
+        "loading_challan_no": "LC-HZR-1044",
+        "copies": {
+          "consignor_copy": {
+            "issued": true,
+            "issued_to": "Shipper Gate Pass",
+            "badge_color": "#ec4899"
+          },
+          "consignee_copy": {
+            "issued": true,
+            "issued_to": "Suzlon Material Store",
+            "badge_color": "#3b82f6"
+          },
+          "driver_copy": {
+            "issued": true,
+            "issued_to": "Cabin Highway Permit Folder",
+            "badge_color": "#10b981"
+          },
+          "billing_copy": {
+            "issued": true,
+            "issued_to": "Commercial Finance Desk",
+            "badge_color": "#f59e0b"
+          }
+        }
+      },
+      "trip_sheet": {
+        "trip_card_no": "TC-2026-082",
+        "issue_date": "2026-09-22",
+        "agreed_gross_freight_inr": 420000.0,
+        "advance_percentage": 70.0,
+        "total_advance_payable_inr": 294000.0,
+        "advance_split": {
+          "cash_daily_bata_inr": 28000.0,
+          "fuel_card_inr": 236000.0,
+          "fuel_card_provider": "BPCL SmartFleet Card #5521-990",
+          "fastag_wallet_recharge_inr": 30000.0,
+          "fastag_tag_id": "34161FA99182312"
+        },
+        "balance_pending_30pct_inr": 126000.0,
+        "market_broker_details": {
+          "broker_name": "Gujarat Western Roadlines & Fleet Association",
+          "broker_pan": "AAFFG1920L",
+          "form_15g_15h_collected": true,
+          "tds_exemption_applied": true,
+          "declaration_notes": "Form 15H verified (Owns < 10 commercial goods vehicles u/s 194C(6))"
+        },
+        "form_15g_15h_applicable": true
+      },
+      "in_transit_telemetry": {
+        "current_location": "Mundra SEZ Inbound Marshalling Yard",
+        "fastag_deductions_total_inr": 16200.0,
+        "fastag_toll_events": [
+          {
+            "plaza_name": "Bharuch Narmada Bridge Toll",
+            "amount_inr": 650.0,
+            "time": "2026-09-22 14:10:00"
+          },
+          {
+            "plaza_name": "Vadodara-Ahmedabad Expressway",
+            "amount_inr": 980.0,
+            "time": "2026-09-22 22:30:00"
+          },
+          {
+            "plaza_name": "Samakhiali Toll Plaza (Kutch Gate)",
+            "amount_inr": 1240.0,
+            "time": "2026-09-23 16:45:00"
+          },
+          {
+            "plaza_name": "Gandhidham-Mundra Port Artery",
+            "amount_inr": 820.0,
+            "time": "2026-09-24 07:15:00"
+          }
+        ],
+        "e_way_bill_expiry_countdown_hours": 94.0,
+        "e_way_bill_status": "ACTIVE_WITHIN_DEADLINE",
+        "distance_remaining_km": 8,
+        "section_129_gst_penalty_risk": "ZERO_COMPLIANT"
+      },
+      "unloading_pod": {
+        "unloaded_timestamp": "2026-09-26 10:15:00",
+        "destination_weighbridge_slip_no": "WB-SUZ-102",
+        "gross_weight_unloaded_mt": 18.5,
+        "shortage_weight_kg": 0.0,
+        "pod_condition": "DAMAGE_REMARK_RECORDED",
+        "pod_stamp_remark": "Remark stamped: Lashing sling abrasion mark on lower flange casing. Repair buffing debit estimated \u20b93,500.",
+        "receiver_supervisor_signature": "Pradeep Chawla, Materials Inspector (Suzlon)",
+        "weighbridge_slip_verified": true,
+        "shortage_damage_debit_assessed_inr": 3500.0
+      },
+      "bill_submission": {
+        "paper_stage": "IN_TRANSIT_FROM_DRIVER_CABIN",
+        "driver_handover_to_branch_date": "Pending Handover",
+        "branch_handover_courier_ref": "In Cabin Folder",
+        "client_desk_submission_date": null,
+        "client_acknowledgment_ref": "Pending Physical Receipt",
+        "client_receiving_clerk": null,
+        "credit_terms_days": 45,
+        "credit_clock_days_elapsed": 0,
+        "credit_clock_days_remaining": 45,
+        "payment_due_date": "Clock Starts Upon Physical Client Acknowledgment"
+      },
+      "final_settlement": {
+        "gross_freight_inr": 420000.0,
+        "tds_rate_pct": 2.0,
+        "tds_deducted_inr": 8400.0,
+        "shortage_damage_debit_inr": 3500.0,
+        "late_unloading_penalty_inr": 0.0,
+        "advance_already_paid_inr": 294000.0,
+        "net_balance_due_inr": 114100.0,
+        "treds_eligible": true,
+        "treds_platform": "M1xchange (Mynd Solutions)",
+        "treds_status": "READY_TO_UPLOAD_POST_SUBMISSION",
+        "treds_advance_rate_pct": 85.0,
+        "treds_instant_cash_inr": 96985.0,
+        "treds_bank_bidder": "HDFC Bank Corporate Supply Chain Desk @ 8.1% p.a.",
+        "settlement_verdict": "Original Bilty in transit to accounts. Debit Note \u20b93,500 recorded."
+      }
+    },
+    {
+      "trip_id": "TRIP-IN-2026-083",
+      "order_ref": "ORD-RIL-1109",
+      "client_name": "Reliance Retail Warehousing",
+      "client_gstin": "27AAACR9921D1ZO",
+      "origin_hub": "Bhiwandi Mega Logistics Hub, Maharashtra",
+      "destination_hub": "Reliance Smart Distribution Center, Ahmedabad",
+      "corridor": "Western Dedicated FMCG Corridor (NH-48 Expressway)",
+      "distance_km": 520,
+      "cargo_description": "FMCG Packaged Consumer Goods & Cold Cereals",
+      "gross_weight_mt": 14.0,
+      "tare_weight_mt": 9.5,
+      "net_weight_mt": 14.0,
+      "vehicle_no": "GJ-06-XX-4412",
+      "vehicle_type": "Ashok Leyland 4220 HG (Multi-Axle Container)",
+      "ownership_type": "Fleet Owned",
+      "driver_name": "Arjun Nair",
+      "driver_phone": "+91 99002 18921",
+      "driver_dl_no": "GJ0620180092104",
+      "is_hazardous": false,
+      "gta_sac_code": "996511",
+      "current_stage": 7,
+      "ulip_compliance": {
+        "vahan_verified": true,
+        "vahan_check_timestamp": "2026-09-24 07:45:00",
+        "rc_status": "ACTIVE",
+        "fitness_valid_upto": "2027-01-20",
+        "national_permit_no": "NP/GJ/2025/11094",
+        "national_permit_valid_upto": "2027-05-15",
+        "state_road_tax_status": "PAID_UP_TO_DATE",
+        "puc_certificate_valid_upto": "2026-10-30",
+        "sarathi_verified": true,
+        "sarathi_check_timestamp": "2026-09-24 07:46:12",
+        "dl_status": "VALID_COMMERCIAL",
+        "dl_class": "TRANS / LMV-GV",
+        "hazardous_endorsement": false,
+        "driver_badge_no": "BDG-GJ-88129",
+        "overall_compliance_verdict": "CLEARED_FOR_DISPATCH"
+      },
+      "bilty": {
+        "bilty_no": "LR-2026-9903",
+        "bilty_date": "2026-09-24",
+        "e_way_bill_no": "271899102451",
+        "e_way_bill_valid_upto": "2026-09-28 23:59:00",
+        "consignor_name": "Reliance Retail Mega Fulfilment Hub",
+        "consignor_address": "Building A4, Renaissance Industrial Smart City, Vashere, Bhiwandi - 421302",
+        "consignee_name": "Reliance Smart Regional Hub",
+        "consignee_address": "Aslali Warehouse Zone, Sarkhej-Bavla Highway, Ahmedabad - 382427",
+        "declared_cargo_value_inr": 3400000.0,
+        "packages_count": "1,420 Master Corrugated Cartons",
+        "loading_challan_no": "LC-BHW-8902",
+        "copies": {
+          "consignor_copy": {
+            "issued": true,
+            "issued_to": "Shipper Dispatch Clerk",
+            "badge_color": "#ec4899"
+          },
+          "consignee_copy": {
+            "issued": true,
+            "issued_to": "Aslali Inbound Dock",
+            "badge_color": "#3b82f6"
+          },
+          "driver_copy": {
+            "issued": true,
+            "issued_to": "Driver Glovebox",
+            "badge_color": "#10b981"
+          },
+          "billing_copy": {
+            "issued": true,
+            "issued_to": "Central Accounts Team",
+            "badge_color": "#f59e0b"
+          }
+        }
+      },
+      "trip_sheet": {
+        "trip_card_no": "TC-2026-083",
+        "issue_date": "2026-09-24",
+        "agreed_gross_freight_inr": 185000.0,
+        "advance_percentage": 70.0,
+        "total_advance_payable_inr": 129500.0,
+        "advance_split": {
+          "cash_daily_bata_inr": 18000.0,
+          "fuel_card_inr": 96500.0,
+          "fuel_card_provider": "IndianOil XTRAPOWER RFID Card #8841-331",
+          "fastag_wallet_recharge_inr": 15000.0,
+          "fastag_tag_id": "34161FA66102844"
+        },
+        "balance_pending_30pct_inr": 55500.0,
+        "market_broker_details": null,
+        "form_15g_15h_applicable": false
+      },
+      "in_transit_telemetry": {
+        "current_location": "Trip Completed - Parked at Aslali Hub",
+        "fastag_deductions_total_inr": 14500.0,
+        "fastag_toll_events": [
+          {
+            "plaza_name": "Charoti NH-48 Toll Plaza",
+            "amount_inr": 520.0,
+            "time": "2026-09-24 11:15:00"
+          },
+          {
+            "plaza_name": "Boriach Toll Plaza (Navsari)",
+            "amount_inr": 680.0,
+            "time": "2026-09-24 16:40:00"
+          },
+          {
+            "plaza_name": "Vasad Toll Plaza (Anand Bypass)",
+            "amount_inr": 740.0,
+            "time": "2026-09-24 23:10:00"
+          }
+        ],
+        "e_way_bill_expiry_countdown_hours": 0.0,
+        "e_way_bill_status": "DELIVERED_AND_CLOSED",
+        "distance_remaining_km": 0,
+        "section_129_gst_penalty_risk": "ZERO_COMPLIANT"
+      },
+      "unloading_pod": {
+        "unloaded_timestamp": "2026-09-25 08:30:00",
+        "destination_weighbridge_slip_no": "WB-RIL-4412",
+        "gross_weight_unloaded_mt": 14.0,
+        "shortage_weight_kg": 0.0,
+        "pod_condition": "CLEAN_SOUND",
+        "pod_stamp_remark": "All 1,420 cartons accounted for. Stamped: 'Received in Sound Condition'.",
+        "receiver_supervisor_signature": "Rajesh Mevada, Inbound Gate Lead",
+        "weighbridge_slip_verified": true,
+        "shortage_damage_debit_assessed_inr": 0.0
+      },
+      "bill_submission": {
+        "paper_stage": "CLIENT_ACKNOWLEDGED_AND_CLEARED",
+        "driver_handover_to_branch_date": "2026-09-25",
+        "branch_handover_courier_ref": "Hand Delivered to Corporate Desk",
+        "client_desk_submission_date": "2026-09-25",
+        "client_acknowledgment_ref": "RIL/AHM/ACK/8812",
+        "client_receiving_clerk": "Amit Panchal, Logistics Accounts",
+        "credit_terms_days": 15,
+        "credit_clock_days_elapsed": 4,
+        "credit_clock_days_remaining": 0,
+        "payment_due_date": "Payment Disbursed via RTGS on 29 Sep 2026"
+      },
+      "final_settlement": {
+        "gross_freight_inr": 185000.0,
+        "tds_rate_pct": 2.0,
+        "tds_deducted_inr": 3700.0,
+        "shortage_damage_debit_inr": 0.0,
+        "late_unloading_penalty_inr": 0.0,
+        "advance_already_paid_inr": 129500.0,
+        "net_balance_due_inr": 0.0,
+        "treds_eligible": true,
+        "treds_platform": "Invoicemart (A. TREDS Ltd)",
+        "treds_status": "SETTLED_VIA_DIRECT_CLIENT_RTGS",
+        "treds_advance_rate_pct": 0.0,
+        "treds_instant_cash_inr": 0.0,
+        "treds_bank_bidder": "Direct Client Treasury RTGS UTR #RIL9920149120",
+        "settlement_verdict": "Full settlement completed. Net balance credited."
+      }
+    }
+  ],
+  "workforce_khata": [
+    {
+      "emp_id": "EMP-201",
+      "name": "Ramesh Yadav",
+      "designation": "Heavy-Axle Long-Haul Pilot",
+      "assigned_truck": "KA-01-AB-1234",
+      "department": "Cabin Crew / Operations",
+      "monthly_base_salary": 26000.0,
+      "trip_bata_earned": 14500.0,
+      "advances_taken_running_khata": 5000.0,
+      "emergency_festival_advance": 0.0,
+      "statutory_pf_esi": 3450.0,
+      "net_payable_salary": 32050.0,
+      "khata_status": "SETTLED_DISBURSED",
+      "payment_mode": "IMPS Direct Bank Disbursed",
+      "utr_ref": "IMPS/6291048821",
+      "disbursed_on": "2026-09-28",
+      "delay_days": 0,
+      "remarks": "Clean trip log. All toll weighbridge tokens submitted."
+    },
+    {
+      "emp_id": "EMP-202",
+      "name": "Suresh Patil",
+      "designation": "Multi-Axle Semi-Trailer Pilot",
+      "assigned_truck": "KA-01-AB-1234",
+      "department": "Cabin Crew / Operations",
+      "monthly_base_salary": 24000.0,
+      "trip_bata_earned": 12800.0,
+      "advances_taken_running_khata": 4000.0,
+      "emergency_festival_advance": 0.0,
+      "statutory_pf_esi": 3180.0,
+      "net_payable_salary": 29620.0,
+      "khata_status": "SETTLED_DISBURSED",
+      "payment_mode": "IMPS Direct Bank Disbursed",
+      "utr_ref": "IMPS/6291049934",
+      "disbursed_on": "2026-09-28",
+      "delay_days": 0,
+      "remarks": "Peenya coil consignment delivered without transit delays."
+    },
+    {
+      "emp_id": "EMP-203",
+      "name": "Balwinder Singh",
+      "designation": "Heavy ODC Hydraulics Driver",
+      "assigned_truck": "MH-12-RN-9921",
+      "department": "Cabin Crew / Operations",
+      "monthly_base_salary": 28000.0,
+      "trip_bata_earned": 16200.0,
+      "advances_taken_running_khata": 8000.0,
+      "emergency_festival_advance": 2000.0,
+      "statutory_pf_esi": 3800.0,
+      "net_payable_salary": 30400.0,
+      "khata_status": "SETTLED_DISBURSED",
+      "payment_mode": "IMPS Immediate Bank Settlement",
+      "utr_ref": "IMPS/255C65F4-C",
+      "disbursed_on": "2026-09-29",
+      "delay_days": 0,
+      "remarks": "Audited & disbursed in full."
+    },
+    {
+      "emp_id": "EMP-204",
+      "name": "Jagdish Mandol",
+      "designation": "Heavy Vehicle Cabin Cleaner / Co-Pilot",
+      "assigned_truck": "KA-01-AB-1234",
+      "department": "Cabin Crew / Helpers",
+      "monthly_base_salary": 14000.0,
+      "trip_bata_earned": 6000.0,
+      "advances_taken_running_khata": 2000.0,
+      "emergency_festival_advance": 0.0,
+      "statutory_pf_esi": 1820.0,
+      "net_payable_salary": 16180.0,
+      "khata_status": "SETTLED_DISBURSED",
+      "payment_mode": "UPI / IMPS",
+      "utr_ref": "UPI/991204812",
+      "disbursed_on": "2026-09-28",
+      "delay_days": 0,
+      "remarks": "Lashing check completed; tyre pressure records intact."
+    },
+    {
+      "emp_id": "EMP-105",
+      "name": "Mahesh Shinde",
+      "designation": "Bhiwandi Yard Master & Loading Dispatcher",
+      "assigned_truck": "Cross-Yard Operations",
+      "department": "Yard & Warehousing",
+      "monthly_base_salary": 32000.0,
+      "trip_bata_earned": 0.0,
+      "advances_taken_running_khata": 0.0,
+      "emergency_festival_advance": 0.0,
+      "statutory_pf_esi": 3840.0,
+      "net_payable_salary": 28160.0,
+      "khata_status": "SETTLED_DISBURSED",
+      "payment_mode": "NEFT Corporate Payroll",
+      "utr_ref": "NEFT/881920491",
+      "disbursed_on": "2026-09-28",
+      "delay_days": 0,
+      "remarks": "100% E-Way bill clearance before physical gate exit."
+    }
+  ],
+  "vehicle_pnl": [
+    {
+      "truck_id": "TRK-001",
+      "vehicle_no": "KA-01-AB-1234",
+      "model": "Tata Prima 5530.S (16-Wheeler)",
+      "financier": "Tata Motors Finance Limited",
+      "loan_account_no": "TMF/BLR/CV/88921",
+      "monthly_bank_emi_inr": 68500.0,
+      "emi_due_date": "5th of month",
+      "monthly_freight_revenue_inr": 285000.0,
+      "diesel_fuel_spend_inr": 112000.0,
+      "fastag_toll_spend_inr": 18400.0,
+      "driver_wages_and_bata_inr": 42000.0,
+      "tyre_wear_and_maintenance_inr": 14500.0,
+      "total_operating_outflow_inr": 186900.0,
+      "gross_operating_surplus_inr": 98100.0,
+      "net_standalone_profit_after_emi_inr": 29600.0,
+      "emi_coverage_ratio": 1.43,
+      "asset_health": "PROFITABLE_HEALTHY"
+    },
+    {
+      "truck_id": "TRK-002",
+      "vehicle_no": "MH-12-RN-9921",
+      "model": "BharatBenz 4028T (14-Wheeler Puller)",
+      "financier": "HDFC Bank Commercial Vehicle Division",
+      "loan_account_no": "HDFC/MUM/CV/44910",
+      "monthly_bank_emi_inr": 54200.0,
+      "emi_due_date": "10th of month",
+      "monthly_freight_revenue_inr": 240000.0,
+      "diesel_fuel_spend_inr": 96500.0,
+      "fastag_toll_spend_inr": 16200.0,
+      "driver_wages_and_bata_inr": 38000.0,
+      "tyre_wear_and_maintenance_inr": 12000.0,
+      "total_operating_outflow_inr": 162700.0,
+      "gross_operating_surplus_inr": 77300.0,
+      "net_standalone_profit_after_emi_inr": 23100.0,
+      "emi_coverage_ratio": 1.42,
+      "asset_health": "PROFITABLE_HEALTHY"
+    },
+    {
+      "truck_id": "TRK-003",
+      "vehicle_no": "GJ-06-XX-4412",
+      "model": "Ashok Leyland 4220 HG (14-Wheeler)",
+      "financier": "Sundaram Finance Limited",
+      "loan_account_no": "SFL/AHM/CV/10291",
+      "monthly_bank_emi_inr": 51000.0,
+      "emi_due_date": "7th of month",
+      "monthly_freight_revenue_inr": 210000.0,
+      "diesel_fuel_spend_inr": 88000.0,
+      "fastag_toll_spend_inr": 14500.0,
+      "driver_wages_and_bata_inr": 36000.0,
+      "tyre_wear_and_maintenance_inr": 9500.0,
+      "total_operating_outflow_inr": 148000.0,
+      "gross_operating_surplus_inr": 62000.0,
+      "net_standalone_profit_after_emi_inr": 11000.0,
+      "emi_coverage_ratio": 1.21,
+      "asset_health": "MODERATE_MARGIN"
+    }
+  ],
+  "last_updated": "2026-09-29T23:03:12.430185"
+}
